@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">MobileFirst Beacons Demo</string>
+    <string name="loadBeaconsAndTriggers">Load Beacons and Triggers</string>
+    <string name="showBeaconsAndTriggers">Show Beacons and Triggers</string>
+    <string name="startMonitoring">Start Monitoring</string>
+    <string name="stopMonitoring">Stop Monitoring</string>
+    <string name="startRanging">Start Ranging</string>
+    <string name="stopRanging">Stop Ranging</string>
+    <string name="turnIntoBeacon">Turn into Beacon</string>
+    <string name="stopBroadcastingAsBeacon">Stop Broadcasting as Beacon</string>
+    <string name="action_settings">Settings</string>
+</resources>
