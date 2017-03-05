@@ -48,7 +48,7 @@ import java.util.List;
 import java.util.Random;
 
 public class WLBeaconsMonitoringApplication extends Application implements BootstrapNotifier, RangeNotifier {
-	private static final String TAG = "WLBeaconsApplication";
+	private static final String TAG = "WLBeaconsMonitoringApp";
 
 	private BeaconManager mBeaconManager;
 	private RegionBootstrap mRegionBootstrap;
