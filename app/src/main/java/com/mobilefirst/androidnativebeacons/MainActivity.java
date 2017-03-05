@@ -56,8 +56,8 @@ public class MainActivity extends Activity {
 
 	public void loadBeaconsAndTriggers(View v) {
 		updateTextView("Loading beacons and triggers from server...");
-		String adapterName = "BeaconsAdapter";
-		String procedureName = "getBeaconsAndTriggers";
+		String adapterName = "MobileFirstBeaconsAdapter";
+		String procedureName = "getBeaconsTriggersAndAssociations";
 		getJSONStoreManager().loadBeaconsAndTriggers(adapterName, procedureName, new WLResponseListener() {
 			@Override
 			public void onSuccess(WLResponse arg0) {

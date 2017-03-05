@@ -92,7 +92,7 @@ public class WLBeaconsAndTriggersJSONStoreManager {
 		try {
 			URI adapterPath = new URI("/adapters/" + adapterName + "/" + procedureName);
 			WLResourceRequest request = new WLResourceRequest(adapterPath, WLResourceRequest.GET);
-			request.setQueryParameter("params", "['" + getApplicationName() + "',null]");
+			// request.setQueryParameter("params", "['" + getApplicationName() + "',null]");
 			request.send(new InvokeProcedureResponseListener(responseListener));
 		} catch (URISyntaxException e) {
 			e.printStackTrace();
@@ -118,7 +118,7 @@ public class WLBeaconsAndTriggersJSONStoreManager {
 	private void saveBeaconsAndTriggersIntoJsonStore(JSONObject responseJson) {
 		try {
 			JSONArray beaconsJsonArray = responseJson.getJSONArray("beacons");
-			JSONArray triggersJsonArray = responseJson.getJSONArray("beaconTriggers");
+			JSONArray triggersJsonArray = responseJson.getJSONArray("triggers");
 			JSONArray associationsJsonArray = responseJson.getJSONArray("beaconTriggerAssociations");
 
 			try {
