@@ -114,7 +114,7 @@ public class WLBeaconsMonitoringApplication extends Application implements Boots
 	}
 
 	private List<Region> getUuidRegions() {
-		List<Region> uuidRegions = new ArrayList<Region>();
+		List<Region> uuidRegions = new ArrayList<>();
 		for (String uuid : getJSONStoreManager().getUuids()) {
 			uuidRegions.add(new Region(uuid, Identifier.parse(uuid), null, null));
 		}
@@ -138,14 +138,14 @@ public class WLBeaconsMonitoringApplication extends Application implements Boots
 		setMonitoringEnabled(false);
 	}
 
-	public void startRanging() throws RemoteException {
-		mBeaconManager.setRangeNotifier(this);
+	private void startRanging() throws RemoteException {
+		mBeaconManager.addRangeNotifier(this);
 		for (Region region : getUuidRegions()) {
 			mBeaconManager.startRangingBeaconsInRegion(region);
 		}
 	}
 
-	public void stopRanging() throws RemoteException {
+	private void stopRanging() throws RemoteException {
 		for (Region region : getUuidRegions()) {
 			mBeaconManager.stopRangingBeaconsInRegion(region);
 		}
@@ -341,8 +341,8 @@ public class WLBeaconsMonitoringApplication extends Application implements Boots
 		return null;
 	}
 
-	public static interface WLRangingStatusHandler {
-		public void notifyRangedBeacons(Collection<Beacon> beacons);
+	public interface WLRangingStatusHandler {
+		void notifyRangedBeacons(Collection<Beacon> beacons);
 	}
 
 	public void setRangingStatusHandler(WLRangingStatusHandler rangingStatusHandler) {
@@ -465,6 +465,6 @@ public class WLBeaconsMonitoringApplication extends Application implements Boots
 	public void setMonitoringEnabled(boolean enabled) {
 		SharedPreferences.Editor editor = getSharedPreferences(PREFS_FILE_NAME, MODE_PRIVATE).edit();
 		editor.putBoolean(PREF_NAME, enabled);
-		editor.commit();
+		editor.apply();
 	}
 }

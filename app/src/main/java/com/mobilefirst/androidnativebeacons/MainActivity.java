@@ -173,28 +173,6 @@ public class MainActivity extends Activity {
 		}
 	}
 
-	public void startRanging(View v) {
-		updateTextView("Starting ranging...");
-		try {
-			wlBeaconsApplication.startRanging();
-			updateTextView("Beacon ranging started.");
-		} catch (RemoteException e) {
-			updateTextView(e.toString());
-		}
-	}
-
-	public void stopRanging(View v) {
-		updateTextView("Stopping ranging...");
-		try {
-			wlBeaconsApplication.stopRanging();
-			// Optionally reset monitoring/ranging state
-			wlBeaconsApplication.resetMonitoringRangingState();
-			updateTextView("Beacon ranging stopped.");
-		} catch (RemoteException e) {
-			updateTextView(e.toString());
-		}
-	}
-
 	private void updateTextView(final String str) {
 		runOnUiThread(new Runnable() {
 			public void run() {
