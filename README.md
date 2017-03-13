@@ -1,6 +1,6 @@
 
-## Create database and mobile backedn server
-Follow steps in https://github.com/shivahr/MobileFirstBeaconsDemoAndroid
+## Create database and mobile backend server
+Follow steps in https://github.com/shivahr/MobileFirstBeaconsAdapter
 
 ## Download source code and register the app under MobileFirst server
 ```
